@@ -11,8 +11,13 @@ import os
 
 
 class League:
-    def __init__(self, name, scoring_settings=None, roster_settings=None):
+    def __init__(self,
+                 name,
+                 scoring_settings=None,
+                 roster_settings=None,
+                 projection_source="web"):
         self.name = name
+        self.projection_source = projection_source
         if not scoring_settings:
             scoring_settings = {}
         self.scoring_settings = {
@@ -75,8 +80,20 @@ class League:
     def __repr__(self):
         return f"League {self.name}, {self.roster_settings['teams']} teams"
 
-    def fill_player_universe(self):
-        all_projections = scrape_projections()
+    def fill_player_universe(self, source=None):
+        source = source or self.projection_source
+        if source == "web":
+            all_projections = list(scrape_projections())
+            file_path = os.path.join(ROOT_DIR, 'projections', 'v0.pkl')
+            with open(file_path, 'wb') as output:
+                dill.dump(all_projections, output)
+        elif source == "disk":
+            file_path = os.path.join(ROOT_DIR, 'projections', 'v0.pkl')
+            with open(file_path, 'rb') as saved_projections:
+                all_projections = dill.load(saved_projections)
+        else:
+            raise KeyError(
+                f"Invalid source {source} must be \'web\' or \'disk\'")
         for projection in all_projections:
             if projection['id'] not in self.player_universe:
                 self.player_universe[projection['id']] = Player(
@@ -217,11 +234,20 @@ class League:
             self.replacement_level[position] = position_filtered[
                 0].season_points()
 
-    def best_available_players(self, n=20):
-        return sorted(
-            self.available_players.values(),
+    def best_available_players(self, position=None, n=20):
+        if position:
+            eligible_players = [
+                player for player in self.available_players.values()
+                if player.position == position
+            ]
+        else:
+            eligible_players = self.available_players.values()
+        sorted_players = sorted(
+            eligible_players,
             key=lambda player: player.value_over_replacement(),
             reverse=True)[:n]
+        return [(player, player.value_over_replacement())
+                for player in sorted_players]
 
     # TODO:
     # How many points would player X add to team Y (using injuries)
