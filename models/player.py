@@ -42,15 +42,14 @@ class Player:
         self.points_by_week[week] = points
 
     def season_points(self):
-        relevant_weeks = range(1, 3)
+        relevant_weeks = range(1, 17)
         for week in relevant_weeks:
             self.weekly_points(week)
         return sum(self.points_by_week.values())
 
     def value_over_replacement(self):
-        position_injury = self.league.injury_simulations[self.position][:2]
-        weekly_rep_level = self.league.replacement_level[self.
-                                                         position] / 2  # 16
+        position_injury = self.league.injury_simulations[self.position]
+        weekly_rep_level = self.league.replacement_level[self.position] / 16
         player_weeks = np.array([
             self.points_by_week[week]
             for week in sorted(self.points_by_week.keys())
