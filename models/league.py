@@ -48,7 +48,8 @@ class League:
             'wr': 2,
             'te': 1,
             'flex': 1,
-            'flex_positions': ['rb', 'wr', 'te']
+            'flex_positions': ['rb', 'wr', 'te'],
+            'auction_budget': None
         }
         for key, value in roster_settings.items():
             self.roster_settings[key] = value
@@ -62,6 +63,9 @@ class League:
         self.available_players = self.player_universe.copy()
         self.injury_likelihood()
         self.calculate_replacement_level()
+        if self.roster_settings['auction_budget']:
+            self.auction_budget_spent = 0
+            self.calculate_auction_values()
 
     def save_to_disk(self, filename=None):
         file_path = os.path.join(ROOT_DIR, 'leagues',
@@ -234,7 +238,8 @@ class League:
             self.replacement_level[position] = position_filtered[
                 0].season_points()
 
-    def best_available_players(self, position=None, n=20):
+    def best_available_players(self, position=None, n=20, auction=False):
+        desired_output = "auction_value" if auction else "value_over_replacement"
         if position:
             eligible_players = [
                 player for player in self.available_players.values()
@@ -244,10 +249,26 @@ class League:
             eligible_players = self.available_players.values()
         sorted_players = sorted(
             eligible_players,
-            key=lambda player: player.value_over_replacement(),
+            key=lambda player: getattr(player, desired_output)(),
             reverse=True)[:n]
-        return [(player, player.value_over_replacement())
+        return [(player, np.round(getattr(player, desired_output)()))
                 for player in sorted_players]
+
+    def calculate_auction_values(self):
+        if not self.roster_settings['auction_budget']:
+            return
+        self.auction_values = {}
+        total_available_budget = (
+            self.roster_settings['auction_budget'] *
+            self.roster_settings['teams'] - self.auction_budget_spent)
+        total_value_available = sum([
+            player.value_over_replacement(auction=True)
+            for player in self.available_players.values()
+        ])
+        for player_id, player in self.available_players.items():
+            self.auction_values[player_id] = (
+                player.value_over_replacement(auction=True) *
+                total_available_budget / total_value_available)
 
     # TODO:
     # How many points would player X add to team Y (using injuries)
