@@ -15,6 +15,7 @@ class Player:
         self.projections_by_week = {}
         self.points_by_week = {}
         self.add_projection(projection)
+        self.independent_start_pcts = {}
 
     def __repr__(self):
         return ', '.join([self.name, self.position, self.nfl_team])
@@ -25,15 +26,17 @@ class Player:
             for key, value in projection.items() if key not in []
         }
 
-    def add_to_team(self, team_id=None, team_name=None):
-        if team_id:
+    def add_to_team(self, team_id=None, team_name=None, auction_price=None):
+        if team_id is not None:
             acquiring_team = self.league.teams[team_id]
         elif team_name:
             acquiring_team = self.league.team_by_name(team_name)
-        acquiring_team.add_player(self)
+        acquiring_team.add_player(self, auction_price)
 
     def weekly_points(self, week):
-        return self.points_by_week.get(week) or self._weekly_points(week)
+        return self.points_by_week.get(
+            week) if week in self.points_by_week.keys(
+            ) else self._weekly_points(week)
 
     def _weekly_points(self, week):
         points = 0.0
@@ -72,19 +75,27 @@ class Player:
         return self.league.auction_values[self.id]
 
     def team_independent_start_pct(self, week):
+        return self.independent_start_pcts.get(
+            week) if week in self.independent_start_pcts.keys(
+            ) else self._team_independent_start_pct(week)
+
+    def _team_independent_start_pct(self, week):
+        def projected_leaders(positions, league=self.league):
+            return sorted(
+                league.player_universe.values(),
+                key=
+                lambda player: player.weekly_points(week) if player.weekly_points(week) and player.position in positions else 0.0,
+                reverse=True)
+
         week_injury_rate = self.league.injury_simulations[self.position][week -
                                                                          1]
-        weekly_projected_leaders = sorted(
-            self.league.player_universe.values(),
-            key=
-            lambda player: player.weekly_points(week) if player.weekly_points(week) and player.position == self.position else 0.0,
-            reverse=True)
+        weekly_projected_leaders = projected_leaders([self.position])
 
         player_rank = weekly_projected_leaders.index(self)
 
         total_starting_players = (self.league.roster_settings[self.position] *
                                   self.league.roster_settings['teams'])
-        without_flex_pct = 1 if player_rank < total_starting_players else (
+        non_flex_pct = 1 if player_rank < total_starting_players else (
             1 - binom.cdf(
                 # Probability that few enough players ahead get hurt to prevent
                 # player from starting
@@ -92,14 +103,13 @@ class Player:
                 player_rank,
                 week_injury_rate))
         if (self.position not in self.league.roster_settings['flex_positions']
-                or without_flex_pct == 1):
-            return without_flex_pct
+                or non_flex_pct == 1
+                or self.league.roster_settings['flex'] == 0):
+            self.independent_start_pcts[week] = non_flex_pct
+            return non_flex_pct
         else:
-            weekly_projected_leaders = sorted(
-                self.league.player_universe.values(),
-                key=
-                lambda player: player.weekly_points(week) if player.weekly_points(week) and player.position in self.league.roster_settings['flex_positions'] else 0.0,
-                reverse=True)
+            weekly_projected_leaders = projected_leaders(
+                self.league.roster_settings['flex_positions'])
 
             player_rank = weekly_projected_leaders.index(self)
 
@@ -108,12 +118,21 @@ class Player:
                 for pos in self.league.roster_settings['flex_positions']
             ]) * self.league.roster_settings['teams'])
 
-            without_flex_pct = 1 if player_rank < total_flex_eligible_starters else (
+            injury_rates = []
+            injury_rate_weights = []
+            for pos in self.league.roster_settings['flex_positions']:
+                injury_rates.append(
+                    self.league.injury_simulations[pos][week - 1])
+                injury_rate_weights.append(self.league.roster_settings[pos])
+
+            flex_pct = 1 if player_rank < total_flex_eligible_starters else (
                 1 - binom.cdf(
-                    # Probability that few enough players ahead get hurt to prevent
-                    # player from starting
+                    # Probability that few enough players ahead get hurt to
+                    # prevent player from starting
                     player_rank - total_flex_eligible_starters,
                     player_rank,
-                    week_injury_rate))
+                    np.average(injury_rates, weights=injury_rate_weights)))
 
-            return (1 - without_flex_pct) * without_flex_pct
+            start_pct = (1 - non_flex_pct) * flex_pct + non_flex_pct
+            self.independent_start_pcts[week] = start_pct
+            return start_pct

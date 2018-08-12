@@ -124,6 +124,16 @@ class League:
             raise KeyError(f"Player with name {player_name} not found")
         return self.player_universe[player_id]
 
+    def player_fuzzy_match(self, player_name_substring):
+        players = [
+            player for id, player in self.player_universe.items()
+            if player_name_substring.lower() in player.name.lower()
+        ]
+        if not players:
+            raise KeyError(
+                f"Player name containing {player_name_substring} not found")
+        return players[0] if len(players) == 1 else players
+
     def injury_likelihood(self):
         self.injury_simulations = {}
         # Obtained from
@@ -134,7 +144,7 @@ class League:
         injury_stats = {
             'rb': {
                 'likelihood': 0.051,
-                'duration_mean': 3.9
+                'duration_mean': 3.9,
             },
             'wr': {
                 'likelihood': .045,
@@ -239,7 +249,8 @@ class League:
                 0].season_points()
 
     def best_available_players(self, position=None, n=20, auction=False):
-        desired_output = "auction_value" if auction else "value_over_replacement"
+        desired_output = ("auction_value"
+                          if auction else "value_over_replacement")
         if position:
             eligible_players = [
                 player for player in self.available_players.values()
@@ -259,8 +270,9 @@ class League:
             return
         self.auction_values = {}
         total_available_budget = (
-            self.roster_settings['auction_budget'] *
-            self.roster_settings['teams'] - self.auction_budget_spent)
+            (self.roster_settings['auction_budget'] -
+             self.roster_settings['defense'] - self.roster_settings['kicker'])
+            * self.roster_settings['teams'] - self.auction_budget_spent)
         total_value_available = sum([
             player.value_over_replacement(auction=True)
             for player in self.available_players.values()
@@ -272,6 +284,3 @@ class League:
 
     # TODO:
     # How many points would player X add to team Y (using injuries)
-    # Best available player for team method
-    # Auction values
-    # Serialize / deserialize
