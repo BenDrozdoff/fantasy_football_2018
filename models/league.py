@@ -48,7 +48,8 @@ class League:
             'wr': 2,
             'te': 1,
             'flex': 1,
-            'flex_positions': ['rb', 'wr', 'te']
+            'flex_positions': ['rb', 'wr', 'te'],
+            'auction_budget': None
         }
         for key, value in roster_settings.items():
             self.roster_settings[key] = value
@@ -62,6 +63,9 @@ class League:
         self.available_players = self.player_universe.copy()
         self.injury_likelihood()
         self.calculate_replacement_level()
+        if self.roster_settings['auction_budget']:
+            self.auction_budget_spent = 0
+            self.calculate_auction_values()
 
     def save_to_disk(self, filename=None):
         file_path = os.path.join(ROOT_DIR, 'leagues',
@@ -120,6 +124,16 @@ class League:
             raise KeyError(f"Player with name {player_name} not found")
         return self.player_universe[player_id]
 
+    def player_fuzzy_match(self, player_name_substring):
+        players = [
+            player for id, player in self.player_universe.items()
+            if player_name_substring.lower() in player.name.lower()
+        ]
+        if not players:
+            raise KeyError(
+                f"Player name containing {player_name_substring} not found")
+        return players[0] if len(players) == 1 else players
+
     def injury_likelihood(self):
         self.injury_simulations = {}
         # Obtained from
@@ -130,7 +144,7 @@ class League:
         injury_stats = {
             'rb': {
                 'likelihood': 0.051,
-                'duration_mean': 3.9
+                'duration_mean': 3.9,
             },
             'wr': {
                 'likelihood': .045,
@@ -234,7 +248,9 @@ class League:
             self.replacement_level[position] = position_filtered[
                 0].season_points()
 
-    def best_available_players(self, position=None, n=20):
+    def best_available_players(self, position=None, n=20, auction=False):
+        desired_output = ("auction_value"
+                          if auction else "value_over_replacement")
         if position:
             eligible_players = [
                 player for player in self.available_players.values()
@@ -244,13 +260,27 @@ class League:
             eligible_players = self.available_players.values()
         sorted_players = sorted(
             eligible_players,
-            key=lambda player: player.value_over_replacement(),
+            key=lambda player: getattr(player, desired_output)(),
             reverse=True)[:n]
-        return [(player, player.value_over_replacement())
+        return [(player, np.round(getattr(player, desired_output)()))
                 for player in sorted_players]
+
+    def calculate_auction_values(self):
+        if not self.roster_settings['auction_budget']:
+            return
+        self.auction_values = {}
+        total_available_budget = (
+            (self.roster_settings['auction_budget'] -
+             self.roster_settings['defense'] - self.roster_settings['kicker'])
+            * self.roster_settings['teams'] - self.auction_budget_spent)
+        total_value_available = sum([
+            player.value_over_replacement(auction=True)
+            for player in self.available_players.values()
+        ])
+        for player_id, player in self.available_players.items():
+            self.auction_values[player_id] = (
+                player.value_over_replacement(auction=True) *
+                total_available_budget / total_value_available)
 
     # TODO:
     # How many points would player X add to team Y (using injuries)
-    # Best available player for team method
-    # Auction values
-    # Serialize / deserialize
