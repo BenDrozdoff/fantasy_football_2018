@@ -1,0 +1,1172 @@
+- name: "Saquon Barkley"
+  position: "rb"
+  RushYards: 0.7
+  PassYards: 0.2
+  RushTD: 0.85
+  PassTD: 0.15
+  team: "NYG"
+  CompletePass: 0.22
+- name: "Sterling Shepard"
+  position: "wr"
+  PassYards: 0.24
+  CompletePass: 0.21
+  PassTD: 0.2
+  team: "NYG"
+- name: "Evan Engram"
+  position: "te"
+  PassYards: 0.17
+  CompletePass: 0.17
+  PassTD: 0.23
+  team: "NYG"
+- name: "Golden Tate"
+  position: "wr"
+  PassYards: 0.14
+  CompletePass: 0.18
+  PassTD: 0.13
+  team: "NYG"
+- name: "Daniel Jones"
+  position: "qb"
+  RushYards: 0.01
+  RushTD: 0.01
+  team: "NYG"
+- name: "Derrius Guice"
+  team: "WAS"
+  position: "rb"
+  RushYards: 0.45
+  RushTD: 0.40
+  CompletePass: 0.07
+  PassYards: 0.05
+  PassTD: 0.05
+- name: "Chris Thompson"
+  team: "WAS"
+  position: "rb"
+  RushYards: 0.1
+  RushTD: 0.05
+  CompletePass: 0.15
+  PassYards: 0.13
+  PassTD: 0.13
+- name: "Adrian Peterson"
+  position: "rb"
+  team: "WAS"
+  RushYards: 0.3
+  RushTD: 0.45
+  CompletePass: 0.03
+  PassYards: 0.03
+  PassTD: 0.03
+- name: "Dwayne Haskins"
+  position: "qb"
+  team: "WAS"
+  RushYards: 0.04
+  RushTD: 0.04
+- name: "Trey Quinn"
+  position: "wr"
+  team: "WAS"
+  CompletePass: 0.15
+  PassYards: 0.13
+  PassTD: 0.13
+- name: "Paul Richardson"
+  position: "wr"
+  team: "WAS"
+  CompletePass: 0.13
+  PassYards: 0.17
+  PassTD: 0.17
+- name: "Jordan Reed"
+  position: "te"
+  team: "WAS"
+  CompletePass: 0.11
+  PassYards: 0.11
+  PassTD: 0.13
+- name: "Jameis Winston"
+  position: "qb"
+  team: "TB"
+  RushYards: 0.12
+  RushTD: 0.12
+- name: "Mike Evans"
+  position: "wr"
+  team: "TB"
+  CompletePass: 0.24
+  PassYards: 0.30
+  PassTD: 0.27
+- name: "Chris Godwin"
+  position: "wr"
+  team: "TB"
+  CompletePass: 0.18
+  PassYards: 0.20
+  PassTD: 0.18
+- name: "OJ Howard"
+  position: "te"
+  team: "TB"
+  CompletePass: 0.13
+  PassYards: 0.15
+  PassTD: 0.15
+- name: "Ronald Jones"
+  position: "rb"
+  team: "TB"
+  RushYards: 0.25
+  RushTD: 0.22
+  CompletePass: 0.03
+  PassYards: 0.03
+  PassTD: 0.03
+- name: "Peyton Barber"
+  position: "rb"
+  team: "TB"
+  RushYards: 0.4
+  RushTD: 0.43
+  CompletePass: 0.05
+  PassYards: 0.05
+  PassTD: 0.05
+- name: "Marcus Mariota"
+  position: "qb"
+  team: "TEN"
+  RushYards: 0.15
+  RushTD: 0.12
+- name: "Derrick Henry"
+  position: "rb"
+  team: "TEN"
+  RushYards: 0.50
+  RushTD: 0.6
+  CompletePass: 0.03
+  PassYards: 0.03
+  PassTD: 0.03
+- name: "Dion Lewis"
+  position: "rb"
+  team: "TEN"
+  RushYards: 0.15
+  RushTD: 0.12
+  CompletePass: 0.15
+  PassYards: 0.12
+  PassTD: 0.12
+- name: "Corey Davis"
+  position: "wr"
+  team: "TEN"
+  CompletePass: 0.24
+  PassYards: 0.24
+  PassTD: 0.24
+- name: "Adam Humphries"
+  position: "wr"
+  team: "TEN"
+  CompletePass: 0.19
+  PassYards: 0.15
+  PassTD: 0.15
+- name: "Delanie Walker"
+  position: "te"
+  team: "TEN"
+  CompletePass: 0.10
+  PassYards: 0.10
+  PassTD: 0.12
+- name: "Jimmy Garoppolo"
+  position: "qb"
+  RushYards: 0.03
+  RushTD: 0.03
+  team: "SF"
+- name: "Tevin Coleman"
+  position: "rb"
+  RushYards: 0.35
+  RushTD: 0.35
+  CompletePass: 0.05
+  PassYards: 0.04
+  PassTD: 0.04
+  team: "SF"
+- name: "Matt Breida"
+  position: "rb"
+  RushYards: 0.15
+  RushTD: 0.12
+  CompletePass: 0.05
+  PassYards: 0.04
+  PassTD: 0.04
+  team: "SF"
+- name: "Jerick McKinnon"
+  position: "rb"
+  RushYards: 0.19
+  RushTD: 0.15
+  CompletePass: 0.08
+  PassYards: 0.06
+  PassTD: 0.06
+  team: "SF"
+- name: "George Kittle"
+  position: "te"
+  CompletePass: 0.23
+  PassYards: 0.20
+  PassTD: 0.23
+  team: "SF"
+- name: "Dante Pettis"
+  position: "wr"
+  CompletePass: 0.15
+  PassYards: 0.15
+  PassTD: 0.15
+  team: "SF"
+- name: "Deebo Samuel"
+  position: "wr"
+  CompletePass: 0.13
+  PassYards: 0.15
+  PassTD: 0.15
+  team: "SF"
+- name: "Marquise Goodwin"
+  position: "wr"
+  CompletePass: 0.09
+  PassYards: 0.12
+  PassTD: 0.12
+  team: "SF"
+- name: "Russell Wilson"
+  position: "qb"
+  RushYards: 0.13
+  RushTD: 0.13
+  team: "SEA"
+- name: "Tyler Lockett"
+  position: "wr"
+  CompletePass: 0.17
+  PassYards: 0.21
+  PassTD: 0.21
+  team: "SEA"
+- name: "DK Metcalf"
+  position: "wr"
+  CompletePass: 0.13
+  PassYards: 0.15
+  PassTD: 0.15
+  team: "SEA"
+- name: "David Moore"
+  position: "wr"
+  CompletePass: 0.12
+  PassYards: 0.10
+  PassTD: 0.10
+  team: "SEA"
+- name: "Chris Carson"
+  position: "rb"
+  RushYards: 0.4
+  RushTD: 0.4
+  CompletePass: 0.06
+  PassYards: 0.04
+  PassTD: 0.04
+  team: "SEA"
+- name: "Rashaad Penny"
+  position: "rb"
+  RushYards: 0.25
+  RushTD: 0.25
+  CompletePass: 0.03
+  PassYards: 0.03
+  PassTD: 0.03
+  team: "SEA"
+- name: "Carson Wentz"
+  position: "qb"
+  RushYards: 0.09
+  RushTD: 0.09
+  team: "PHI"
+- name: "Alshon Jeffery"
+  position: "wr"
+  CompletePass: 0.19
+  PassYards: 0.22
+  PassTD: 0.22
+  team: "PHI"
+- name: "Dasean Jackson"
+  position: "wr"
+  CompletePass: 0.13
+  PassYards: 0.16
+  PassTD: 0.16
+  team: "PHI"
+- name: "Miles Sanders"
+  position: "rb"
+  CompletePass: 0.06
+  PassYards: 0.04
+  PassTD: 0.04
+  RushYards: 0.35
+  RushTD: 0.3
+  team: "PHI"
+- name: "Jordan Howard"
+  position: "rb"
+  RushYards: 0.25
+  RushTD: 0.3
+  CompletePass: 0.02
+  PassYards: 0.02
+  PassTD: 0.02
+  team: "PHI"
+- name: "Zach Ertz"
+  position: "te"
+  CompletePass: 0.24
+  PassYards: 0.19
+  PassTD: 0.21
+  team: "PHI"
+- name: "Ben Roethlisberger"
+  position: "qb"
+  RushYards: 0.03
+  RushTD: 0.03
+  team: "PIT"
+- name: "JuJu Smith-Schuster"
+  position: "wr"
+  CompletePass: 0.26
+  PassYards: 0.22
+  PassTD: 0.22
+  team: "PIT"
+- name: "James Washington"
+  position: "wr"
+  CompletePass: 0.13
+  PassYards: 0.16
+  PassTD: 0.16
+  team: "PIT"
+- name: "Dante Moncrief"
+  position: "wr"
+  CompletePass: 0.1
+  PassYards: 0.10
+  PassTD: 0.10
+  team: "PIT"
+- name: "James Conner"
+  position: "rb"
+  RushYards: 0.6
+  RushTD: 0.65
+  CompletePass: 0.1
+  PassYards: 0.08
+  PassTD: 0.08
+  team: "PIT"
+- name: "Vance McDonald"
+  position: "te"
+  CompletePass: 0.13
+  PassYards: 0.09
+  PassTD: 0.13
+  team: "PIT"
+- name: "Derek Carr"
+  position: "qb"
+  RushYards: 0.03
+  RushTD: 0.03
+  team: "OAK"
+- name: "Antonio Brown"
+  position: "wr"
+  CompletePass: 0.26
+  PassYards: 0.26
+  PassTD: 0.26
+  team: "OAK"
+- name: "Tyrell Williams"
+  position: "wr"
+  CompletePass: 0.14
+  PassYards: 0.16
+  PassTD: 0.16
+  team: "OAK"
+- name: "Josh Jacobs"
+  position: "rb"
+  RushYards: 0.45
+  RushTD: 0.5
+  CompletePass: 0.04
+  PassYards: 0.02
+  PassTD: 0.02
+  team: "OAK"
+- name: "Sam Darnold"
+  position: "qb"
+  RushYards: 0.03
+  RushTD: 0.03
+  team: "NYJ"
+- name: "Robby Anderson"
+  position: "wr"
+  CompletePass: 0.20
+  PassYards: 0.24
+  PassTD: 0.24
+  team: "NYJ"
+- name: "Jamison Crowder"
+  position: "wr"
+  CompletePass: 0.16
+  PassYards: 0.14
+  PassTD: 0.14
+  team: "NYJ"
+- name: "Quincy Enunwa"
+  position: "wr"
+  CompletePass: 0.14
+  PassYards: 0.12
+  PassTD: 0.12
+  team: "NYJ"
+- name: "Leveon Bell"
+  position: "rb"
+  RushYards: 0.7
+  RushTD: 0.7
+  CompletePass: 0.10
+  PassYards: 0.07
+  PassTD: 0.07
+  team: "NYJ"
+- name: "Drew Brees"
+  position: "qb"
+  RushYards: 0.03
+  RushTD: 0.03
+  team: "NO"
+- name: "Michael Thomas"
+  position: "wr"
+  CompletePass: 0.29
+  PassYards: 0.26
+  PassTD: 0.27
+  team: "NO"
+- name: "Ted Ginn"
+  position: "wr"
+  CompletePass: 0.11
+  PassYards: 0.14
+  PassTD: 0.14
+  team: "NO"
+- name: "Trequan Smith"
+  position: "wr"
+  CompletePass: 0.13
+  PassYards: 0.13
+  PassTD: 0.13
+  team: "NO"
+- name: "Jared Cook"
+  position: "te"
+  CompletePass: 0.10
+  PassYards: 0.10
+  PassTD: 0.10
+  team: "NO"
+- name: "Alvin Kamara"
+  position: "rb"
+  RushYards: 0.45
+  RushTD: 0.45
+  CompletePass: 0.18
+  PassYards: 0.16
+  PassTD: 0.16
+  team: "NO"
+- name: "Latavius Murray"
+  position: "rb"
+  RushYards: 0.25
+  RushTD: 0.3
+  CompletePass: 0.04
+  PassYards: 0.04
+  PassTD: 0.04
+  team: "NO"
+- name: "Tom Brady"
+  position: "qb"
+  RushYards: 0.01
+  RushTD: 0.05
+  team: "NE"
+- name: "Julian Edelman"
+  position: "wr"
+  CompletePass: 0.25
+  PassYards: 0.20
+  PassTD: 0.23
+  team: "NE"
+- name: "Josh Gordon"
+  position: "wr"
+  CompletePass: 0.17
+  PassYards: 0.19
+  PassTD: 0.19
+  team: "NE"
+- name: "James White"
+  position: "rb"
+  RushYards: 0.15
+  RushTD: 0.15
+  CompletePass: 0.21
+  PassYards: 0.16
+  PassTD: 0.16
+  team: "NE"
+- name: "Sony Michel"
+  position: "rb"
+  RushYards: 0.45
+  RushTD: 0.48
+  CompletePass: 0.04
+  PassYards: 0.04
+  PassTD: 0.04
+  team: "NE"
+- name: "Dalvin Cook"
+  position: "rb"
+  RushYards: 0.6
+  PassYards: 0.07
+  RushTD: 0.64
+  PassTD: 0.07
+  team: "MIN"
+  CompletePass: 0.10
+- name: "Adam Thielen"
+  position: "wr"
+  PassYards: 0.25
+  CompletePass: 0.25
+  PassTD: 0.25
+  team: "MIN"
+- name: "Kyle Rudolph"
+  position: "te"
+  PassYards: 0.10
+  CompletePass: 0.12
+  PassTD: 0.13
+  team: "MIN"
+- name: "Stefon Diggs"
+  position: "wr"
+  PassYards: 0.23
+  CompletePass: 0.25
+  PassTD: 0.23
+  team: "MIN"
+- name: "Kirk Cousins"
+  position: "qb"
+  RushYards: 0.02
+  RushTD: 0.02
+  team: "MIN"
+- name: "Ryan Fitzpatrick"
+  position: "qb"
+  RushYards: 0.02
+  RushTD: 0.02
+  team: "MIA"
+- name: "Kenny Stills"
+  position: "wr"
+  CompletePass: 0.14
+  PassYards: 0.18
+  PassTD: 0.18
+  team: "MIA"
+- name: "Devante Parker"
+  position: "wr"
+  CompletePass: 0.18
+  PassYards: 0.2
+  PassTD: 0.2
+  team: "MIA"
+- name: "Albert Wilson"
+  position: "wr"
+  CompletePass: 0.18
+  PassYards: 0.14
+  PassTD: 0.14
+  team: "MIA"
+- name: "Kenyan Drake"
+  position: "rb"
+  RushYards: 0.45
+  RushTD: 0.45
+  CompletePass: 0.12
+  PassYards: 0.08
+  PassTD: 0.08
+  team: "MIA"
+- name: "Kalen Ballage"
+  position: "rb"
+  RushYards: 0.25
+  RushTD: 0.25
+  CompletePass: 0.04
+  PassYards: 0.04
+  PassTD: 0.04
+  team: "MIA"
+- name: "Jared Goff"
+  position: "qb"
+  RushYards: 0.04
+  RushTD: 0.04
+  team: "LA"
+- name: "Brandin Cooks"
+  position: "wr"
+  CompletePass: 0.20
+  PassYards: 0.22
+  PassTD: 0.22
+  team: "LA"
+- name: "Cooper Kupp"
+  position: "wr"
+  CompletePass: 0.19
+  PassYards: 0.17
+  PassTD: 0.17
+  team: "LA"
+- name: "Robert Woods"
+  position: "wr"
+  CompletePass: 0.23
+  PassYards: 0.23
+  PassTD: 0.23
+  team: "LA"
+- name: "Todd Gurley"
+  position: "rb"
+  RushYards: 0.50
+  RushTD: 0.50
+  CompletePass: 0.11
+  PassYards: 0.08
+  PassTD: 0.08
+  team: "LA"
+- name: "Darrell Henderson"
+  position: "rb"
+  RushYards: 0.2
+  RushTD: 0.2
+  CompletePass: 0.04
+  PassYards: 0.04
+  PassTD: 0.04
+  team: "LA"
+- name: "Philip Rivers"
+  position: "qb"
+  RushYards: 0.02
+  RushTD: 0.02
+  team: "LAC"
+- name: "Keenan Allen"
+  position: "wr"
+  CompletePass: 0.26
+  PassYards: 0.22
+  PassTD: 0.22
+  team: "LAC"
+- name: "Mike Williams"
+  position: "wr"
+  CompletePass: 0.19
+  PassYards: 0.22
+  PassTD: 0.22
+  team: "LAC"
+- name: "Hunter Henry"
+  position: "te"
+  CompletePass: 0.13
+  PassYards: 0.11
+  PassTD: 0.13
+  team: "LAC"
+- name: "Melvin Gordon"
+  position: "rb"
+  RushYards: 0.45
+  RushTD: 0.45
+  CompletePass: 0.11
+  PassYards: 0.08
+  PassTD: 0.08
+  team: "LAC"
+- name: "Austin Ekeler"
+  position: "rb"
+  RushYards: 0.15
+  RushTD: 0.15
+  CompletePass: 0.10
+  PassYards: 0.07
+  PassTD: 0.07
+  team: "LAC"
+- name: "Justin Jackson"
+  position: "rb"
+  RushYards: 0.2
+  RushTD: 0.2
+  CompletePass: 0.05
+  PassYards: 0.03
+  PassTD: 0.03
+  team: "LAC"
+- name: "Patrick Mahomes"
+  position: "qb"
+  RushYards: 0.13
+  RushTD: 0.13
+  team: "KC"
+- name: "Tyreek Hill"
+  position: "wr"
+  CompletePass: 0.23
+  PassYards: 0.27
+  PassTD: 0.27
+  team: "KC"
+- name: "Sammy Watkins"
+  position: "wr"
+  CompletePass: 0.15
+  PassYards: 0.14
+  PassTD: 0.14
+  team: "KC"
+- name: "Travis Kelce"
+  position: "te"
+  CompletePass: 0.25
+  PassYards: 0.22
+  PassTD: 0.22
+  team: "KC"
+- name: "Damien Williams"
+  position: "rb"
+  RushYards: 0.35
+  RushTD: 0.35
+  CompletePass: 0.06
+  PassYards: 0.04
+  PassTD: 0.04
+  team: "KC"
+- name: "Lesean McCoy"
+  position: "rb"
+  RushYards: 0.25
+  RushTD: 0.25
+  CompletePass: 0.06
+  PassYards: 0.04
+  PassTD: 0.04
+  team: "KC"
+- name: "Darwin Thompson"
+  position: "rb"
+  RushYards: 0.1
+  RushTD: 0.1
+  CompletePass: 0.02
+  PassYards: 0.01
+  PassTD: 0.01
+  team: "KC"
+- name: "Nick Foles"
+  position: "qb"
+  RushYards: 0.04
+  RushTD: 0.04
+  team: "JAX"
+- name: "Dede Westbrook"
+  position: "wr"
+  CompletePass: 0.19
+  PassYards: 0.16
+  PassTD: 0.16
+  team: "JAX" 
+- name: "Marqise Lee"
+  position: "wr"
+  CompletePass: 0.15
+  PassYards: 0.13
+  PassTD: 0.13
+  team: "JAX" 
+- name: "Leonard Fournette"
+  position: "rb"
+  RushYards: 0.65
+  RushTD: 0.65
+  CompletePass: 0.11
+  PassYards: 0.07
+  PassTD: 0.07
+  team: "JAX"
+- name: "Jacoby Brissett"
+  position: "qb"
+  RushYards: 0.07
+  RushTD: 0.07
+  team: "IND"
+- name: "TY Hilton"
+  position: "wr"
+  CompletePass: 0.19
+  PassYards: 0.19
+  PassTD: 0.19
+  team: "IND" 
+- name: "Eric Ebron"
+  position: "te"
+  CompletePass: 0.19
+  PassYards: 0.14
+  PassTD: 0.14
+  team: "IND" 
+- name: "Marlon Mack"
+  position: "rb"
+  RushYards: 0.55
+  RushTD: 0.55
+  CompletePass: 0.06
+  PassYards: 0.04
+  PassTD: 0.04
+  team: "IND"
+- name: "Deshaun Watson"
+  position: "qb"
+  RushYards: 0.2
+  RushTD: 0.2
+  team: "HOU"
+- name: "Deandre Hopkins"
+  position: "wr"
+  CompletePass: 0.3
+  PassYards: 0.3
+  PassTD: 0.3
+  team: "HOU"
+- name: "Will Fuller"
+  position: "wr"
+  CompletePass: 0.18
+  PassYards: 0.2
+  PassTD: 0.2
+  team: "HOU"
+- name: "Kenny Stills"
+  position: "wr"
+  CompletePass: 0.14
+  PassYards: 0.16
+  PassTD: 0.16
+  team: "HOU"
+- name: "Duke Johnson"
+  position: "rb"
+  RushYards: 0.25
+  RushTD: 0.25
+  CompletePass: 0.1
+  PassYards: 0.08
+  PassTD: 0.08
+  team: "HOU"
+- name: "Carlos Hyde"
+  position: "rb"
+  RushYards: 0.35
+  RushTD: 0.35
+  CompletePass: 0.04
+  PassYards: 0.02
+  PassTD: 0.02
+  team: "HOU"
+- name: "Aaron Rodgers"
+  position: "qb"
+  RushYards: 0.14
+  RushTD: 0.14
+  team: "GB"
+- name: "Davante Adams"
+  position: "wr"
+  CompletePass: 0.28
+  PassYards: 0.28
+  PassTD: 0.28
+  team: "GB"
+- name: "Geronimo Allison"
+  position: "wr"
+  CompletePass: 0.15
+  PassYards: 0.17
+  PassTD: 0.17
+  team: "GB"
+- name: "Marquez Valdez Scantling"
+  position: "wr"
+  CompletePass: 0.12
+  PassYards: 0.12
+  PassTD: 0.12
+  team: "GB"
+- name: "Jimmy Graham"
+  position: "te"
+  CompletePass: 0.11
+  PassYards: 0.10
+  PassTD: 0.12
+  team: "GB"
+- name: "Aaron Jones"
+  position: "rb"
+  RushYards: 0.53
+  RushTD: 0.53
+  CompletePass: 0.08
+  PassYards: 0.06
+  PassTD: 0.06
+  team: "GB"
+- name: "Matthew Stafford"
+  position: "qb"
+  RushYards: 0.03
+  RushTD: 0.03
+  team: "DET"
+- name: "Kenny Golladay"
+  position: "wr"
+  CompletePass: 0.24
+  PassYards: 0.27
+  PassTD: 0.27
+  team: "DET"
+- name: "Marvin Jones"
+  position: "wr"
+  CompletePass: 0.19
+  PassYards: 0.23
+  PassTD: 0.23
+  team: "DET"
+- name: "Kerryon Johnson"
+  position: "rb"
+  RushYards: 0.5
+  RushTD: 0.5
+  CompletePass: 0.14
+  PassYards: 0.1
+  PassTD: 0.1
+  team: "DET"
+- name: "CJ Anderson"
+  position: "rb"
+  RushYards: 0.2
+  RushTD: 0.2
+  CompletePass: 0.05
+  PassYards: 0.03
+  PassTD: 0.03
+  team: "DET"
+- name: "Joe Flacco"
+  position: "qb"
+  RushYards: 0.02
+  RushTD: 0.02
+  team: "DEN"
+- name: "Courtland Sutton"
+  position: "wr"
+  CompletePass: 0.15
+  PassYards: 0.19
+  PassTD: 0.19
+  team: "DEN"
+- name: "Emmanuel Sanders"
+  position: "wr"
+  CompletePass: 0.18
+  PassYards: 0.14
+  PassTD: 0.14
+  team: "DEN"
+- name: "Daesean Hamilton"
+  position: "wr"
+  CompletePass: 0.13
+  PassYards: 0.12
+  PassTD: 0.12
+  team: "DEN"
+- name: "Philip Lindsay"
+  position: "rb"
+  RushYards: 0.4
+  RushTD: 0.4
+  CompletePass: 0.09
+  PassYards: 0.06
+  PassTD: 0.06
+  team: "DEN"
+- name: "Royce Freeman"
+  position: "rb"
+  RushYards: 0.35
+  RushTD: 0.35
+  CompletePass: 0.04
+  PassYards: 0.02
+  PassTD: 0.02
+  team: "DEN"
+- name: "Dak Prescott"
+  position: "qb"
+  RushYards: 0.15
+  RushTD: 0.15
+  team: "DAL"
+- name: "Amari Cooper"
+  position: "wr"
+  CompletePass: 0.24
+  PassYards: 0.21
+  PassTD: 0.21
+  team: "DAL"
+- name: "Michael Gallup"
+  position: "wr"
+  CompletePass: 0.16
+  PassYards: 0.19
+  PassTD: 0.19
+  team: "DAL"
+- name: "Randall Cobb"
+  position: "wr"
+  CompletePass: 0.13
+  PassYards: 0.13
+  PassTD: 0.13
+  team: "DAL"
+- name: "Ezekiel Elliot"
+  position: "rb"
+  RushYards: 0.53
+  RushTD: 0.53
+  CompletePass: 0.14
+  PassYards: 0.11
+  PassTD: 0.11
+  team: "DAL"
+- name: "Tony Pollard"
+  position: "rb"
+  RushYards: 0.18
+  RushTD: 0.18
+  CompletePass: 0.04
+  PassYards: 0.02
+  PassTD: 0.02
+  team: "DAL"
+- name: "Baker Mayfield"
+  position: "qb"
+  RushYards: 0.07
+  RushTD: 0.07
+  team: "CLE"
+- name: "Odell Beckham Jr"
+  position: "wr"
+  CompletePass: 0.28
+  PassYards: 0.28
+  PassTD: 0.28
+  team: "CLE"
+- name: "Jarvis Landry"
+  position: "wr"
+  CompletePass: 0.22
+  PassYards: 0.22
+  PassTD: 0.22
+  team: "CLE"
+- name: "David Njoku"
+  position: "te"
+  CompletePass: 0.15
+  PassYards: 0.13
+  PassTD: 0.15
+  team: "CLE"
+- name: "Nick Chubb"
+  position: "rb"
+  RushYards: 0.6
+  RushTD: 0.6
+  CompletePass: 0.10
+  PassYards: 0.07
+  PassTD: 0.07
+  team: "CLE"
+- name: "Kareem Hunt"
+  position: "rb"
+  RushYards: 0.15
+  RushTD: 0.15
+  CompletePass: 0.05
+  PassYards: 0.03
+  PassTD: 0.03
+  team: "CLE"
+- name: "Andy Dalton"
+  position: "qb"
+  RushYards: 0.03
+  RushTD: 0.03
+  team: "CIN"
+- name: "AJ Green"
+  position: "wr"
+  CompletePass: 0.23
+  PassYards: 0.23
+  PassTD: 0.23
+  team: "CIN"
+- name: "Tyler Boyd"
+  position: "wr"
+  CompletePass: 0.22
+  PassYards: 0.20
+  PassTD: 0.21
+  team: "CIN"
+- name: "Joe Mixon"
+  position: "rb"
+  RushYards: 0.65
+  RushTD: 0.65
+  CompletePass: 0.12
+  PassYards: 0.09
+  PassTD: 0.09
+  team: "CIN"
+- name: "Mitch Trubisky"
+  position: "qb"
+  RushYards: 0.18
+  RushTD: 0.18
+  team: "CHI"
+- name: "Allen Robinson"
+  position: "wr"
+  CompletePass: 0.22
+  PassYards: 0.22
+  PassTD: 0.22
+  team: "CHI"
+- name: "Anthony Miller"
+  position: "wr"
+  CompletePass: 0.14
+  PassYards: 0.14
+  PassTD: 0.14
+  team: "CHI"
+- name: "Taylor Gabriel"
+  position: "wr"
+  CompletePass: 0.12
+  PassYards: 0.12
+  PassTD: 0.12
+  team: "CHI"
+- name: "Tre Burton"
+  position: "te"
+  CompletePass: 0.15
+  PassYards: 0.12
+  PassTD: 0.12
+  team: "CHI"
+- name: "David Montgomery"
+  position: "rb"
+  RushYards: 0.45
+  RushTD: 0.45
+  CompletePass: 0.04
+  PassYards: 0.02
+  PassTD: 0.02
+  team: "CHI"
+- name: "Tarik Cohen"
+  position: "rb"
+  RushYards: 0.15
+  RushTD: 0.15
+  CompletePass: 0.17
+  PassYards: 0.13
+  PassTD: 0.13
+  team: "CHI"
+- name: "Cam Newton"
+  position: "qb"
+  RushYards: 0.23
+  RushTD: 0.26
+  team: "CAR"
+- name: "DJ Moore"
+  position: "wr"
+  CompletePass: 0.19
+  PassYards: 0.16
+  PassTD: 0.16
+  team: "CAR"
+- name: "Curtis Samuel"
+  position: "wr"
+  CompletePass: 0.15
+  PassYards: 0.15
+  PassTD: 0.15
+  team: "CAR"
+- name: "Greg Olsen"
+  position: "te"
+  CompletePass: 0.12
+  PassYards: 0.08
+  PassTD: 0.1
+  team: "CAR"
+- name: "Christian McCaffrey"
+  position: "rb"
+  RushYards: 0.6
+  RushTD: 0.56
+  CompletePass: 0.2
+  PassYards: 0.15
+  PassTD: 0.15
+  team: "CAR"
+- name: "Josh Allen"
+  position: "qb"
+  RushYards: 0.27
+  RushTD: 0.27
+  team: "BUF"
+- name: "John Brown"
+  position: "wr"
+  CompletePass: 0.14
+  PassYards: 0.18
+  PassTD: 0.18
+  team: "BUF"
+- name: "Zay Jones"
+  position: "wr"
+  CompletePass: 0.21
+  PassYards: 0.21
+  PassTD: 0.21
+  team: "BUF"
+- name: "Devin Singletary"
+  position: "rb"
+  RushYards: 0.35
+  RushTD: 0.35
+  CompletePass: 0.06
+  PassYards: 0.03
+  PassTD: 0.03
+  team: "BUF"
+- name: "Frank Gore"
+  position: "rb"
+  RushYards: 0.25
+  RushTD: 0.25
+  CompletePass: 0.02
+  PassYards: 0.01
+  PassTD: 0.01
+  team: "BUF"
+- name: "TJ Yeldon"
+  position: "rb"
+  RushYards: 0.1
+  RushTD: 0.1
+  CompletePass: 0.08
+  PassYards: 0.05
+  PassTD: 0.05
+  team: "BUF"
+- name: "Lamar Jackson"
+  position: "qb"
+  RushYards: 0.37
+  RushTD: 0.37
+  team: "BAL"
+- name: "Marquise Brown"
+  position: "wr"
+  CompletePass: 0.14
+  PassYards: 0.17
+  PassTD: 0.17
+  team: "BAL"
+- name: "Myles Boykin"
+  position: "wr"
+  CompletePass: 0.16
+  PassYards: 0.16
+  PassTD: 0.16
+  team: "BAL"
+- name: "Mark Andrews"
+  position: "te"
+  CompletePass: 0.1
+  PassYards: 0.1
+  PassTD: 0.1
+  team: "BAL"
+- name: "Mark Ingram"
+  position: "rb"
+  RushYards: 0.35
+  RushTD: 0.35
+  CompletePass: 0.09
+  PassYards: 0.05
+  PassTD: 0.05
+  team: "BAL"
+- name: "Matt Ryan"
+  position: "qb"
+  RushYards: 0.03
+  RushTD: 0.03
+  team: "ATL"
+- name: "Julio Jones"
+  position: "wr"
+  CompletePass: 0.28
+  PassYards: 0.3
+  PassTD: 0.3
+  team: "ATL"
+- name: "Calvin Ridley"
+  position: "wr"
+  CompletePass: 0.15
+  PassYards: 0.14
+  PassTD: 0.14
+  team: "ATL"
+- name: "Mohamed Sanu"
+  position: "wr"
+  CompletePass: 0.15
+  PassYards: 0.13
+  PassTD: 0.13
+  team: "ATL"
+- name: "Austin Hooper"
+  position: "te"
+  CompletePass: 0.13
+  PassYards: 0.09
+  PassTD: 0.09
+  team: "ATL"
+- name: "Devonta Freeman"
+  position: "rb"
+  RushYards: 0.65
+  RushTD: 0.65
+  CompletePass: 0.08
+  PassYards: 0.05
+  PassTD: 0.05
+  team: "ATL"
+- name: "Kyler Murray"
+  position: "qb"
+  RushYards: 0.2
+  RushTD: 0.2
+  team: "ARI"
+- name: "Christian Kirk"
+  position: "wr"
+  CompletePass: 0.19
+  PassYards: 0.18
+  PassTD: 0.18
+  team: "ARI"
+- name: "Larry Fitzgerald"
+  position: "wr"
+  CompletePass: 0.20
+  PassYards: 0.19
+  PassTD: 0.19
+  team: "ARI"
+- name: "David Johnson"
+  position: "rb"
+  RushYards: 0.65
+  RushTD: 0.65
+  CompletePass: 0.14
+  PassYards: 0.11
+  PassTD: 0.11
+  team: "ARI"
