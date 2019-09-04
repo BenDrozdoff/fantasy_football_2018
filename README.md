@@ -6,12 +6,12 @@
 
 ### Usage
 
-Customize your league with your own scoring and roster settings.  Common presets are already defaulted, so just pass in the settings you'd like to override.  See below for a 12 team league with half-PPR.
+Customize your league with your own scoring and roster settings.  Common presets are already defaulted, so just pass in the settings you'd like to override.  See below for a 12 team league with half-PPR. 
 
 
 ```python
 from models.league import League
-league = League("demo_league", roster_settings = {'teams': 12}, scoring_settings = {'rec': 0.5})
+league = League("demo_league", projection_source="projection", roster_settings = {'teams': 12}, scoring_settings = {'rec': 0.5})
 
 ```
 
@@ -68,7 +68,3 @@ league.save_to_disk()
 resumed_league = League.load_from_disk("demo_league")
 ```
 
-### Goals for season start
-In addition to this helpful best_available_players method, I'd like to add a method that considers current team makeup to determine which player will add the most value to a team.  If I already have 3 RB, it might not be the best use of resources to take a RB in the 4th round, even if that RB has the highest value over replacement level
-
-Additionally, I'd like to use the infrastructure in place to calculate auction values, not only for predraft, but on the fly.
