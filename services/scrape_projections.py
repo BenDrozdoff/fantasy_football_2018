@@ -11,7 +11,7 @@ def fetch_projections_page(week, position_id):
     assert 1 <= week <= 17, f"Invalid week: {week}"
 
     base_url = "https://www.fantasysharks.com/apps/bert/forecasts/projections.php"
-    url = f"{base_url}?League=-1&Position={position_id}&scoring=1&Segment={627+week}&uid=4"
+    url = f"{base_url}?League=-1&Position={position_id}&scoring=1&Segment={659+week}&uid=4"
 
     request = urllib.request.Request(url)
     request.add_header('User-Agent', 'projection-scraper 0.1')
@@ -20,7 +20,7 @@ def fetch_projections_page(week, position_id):
 
 
 def scrape_projections():
-    for week in range(1, 17):  # If your league uses week 17 you should quit
+    for week in range(1, 2):  # If your league uses week 17 you should quit
         position_map = {'rb': 2, 'wr': 4, 'te': 5, 'qb': 1}
         for position, position_id in position_map.items():
             time.sleep(5)
