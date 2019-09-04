@@ -1,14 +1,16 @@
 # coding: utf8
 
+from collections import defaultdict
 from definitions import ROOT_DIR
 from models.player import Player
 from models.team import Team
-from scrape_projections import scrape_projections
+from services.scrape_projections import scrape_projections
+from services.projection.projection import project
 
 import dill
 import numpy as np
 import os
-
+import yaml
 
 class League:
     def __init__(self,
@@ -88,6 +90,7 @@ class League:
         source = source or self.projection_source
         if source == "web":
             all_projections = list(scrape_projections())
+            import ipdb; ipdb.set_trace()
             file_path = os.path.join(ROOT_DIR, 'projections', 'v0.pkl')
             with open(file_path, 'wb') as output:
                 dill.dump(all_projections, output)
@@ -95,9 +98,35 @@ class League:
             file_path = os.path.join(ROOT_DIR, 'projections', 'v0.pkl')
             with open(file_path, 'rb') as saved_projections:
                 all_projections = dill.load(saved_projections)
+        elif source == "projection":
+            team_projections = project()
+            with open(os.path.join(ROOT_DIR, "services", "projection", "players.yml")) as file:
+                usage = yaml.safe_load(file)
+            all_projections = []
+            for id, player in enumerate(usage):
+                player = defaultdict(int, player)
+                team_weeks = team_projections[team_projections.Offense == player["team"]]
+                for _idx, week in team_weeks.iterrows():
+                    all_projections.append({
+                        "id": id, 
+                        "week": week["week"],
+                        "position": player["position"],
+                        "player": player["name"],
+                        "tm": player["team"],
+                        "rush yds": player["RushYards"] * week["RushYards"],
+                        "rush tds": player["RushTD"] * week["RushTD"],
+                        "rec yds": player["PassYards"] * week["PassYards"],
+                        "rec tds": player["PassTD"] * week["PassTD"],
+                        "rec": player["CompletePass"] * week["CompletePass"],
+                        "pass yds": (player["position"] == "qb") * week["PassYards"],
+                        "pass tds": (player["position"] == "qb") * week["PassTD"],
+                        "int": (player["position"] == "qb") * week["InterceptionThrown"],
+                    })
+ 
+                
         else:
             raise KeyError(
-                f"Invalid source {source} must be \'web\' or \'disk\'")
+                f"Invalid source {source} must be \'web\' or \'disk\' or \'projection\'")
         for projection in all_projections:
             if projection['id'] not in self.player_universe:
                 self.player_universe[projection['id']] = Player(
